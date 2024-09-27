@@ -110,7 +110,20 @@ class Conjuntos(QWidget):
             resultado_sin_comillas = "{ " + ", ".join(op) + " }"
             self.result.setText(f"El resultado de la unión es: {resultado_sin_comillas}")
         
+        elif "Intersección" in operador:
+            op = conjunto1 & conjunto2
+            resultado_sin_comillas = "{ " + ", ".join(op) + " }"
+            self.result.setText(f"El resultado de la intersección es: {resultado_sin_comillas}")
         
+        elif "Diferencia" in operador:
+            op = conjunto1 - conjunto2
+            resultado_sin_comillas = "{ " + ", ".join(op) + " }"
+            self.result.setText(f"El resultado de la diferencia es: {resultado_sin_comillas}")
+        
+        elif "Diferencia simétrica" in operador:
+            op = conjunto1 ^ conjunto2
+            resultado_sin_comillas = "{ " + ", ".join(op) + " }"
+            self.result.setText(f"El resultado de la diferencia simétrica es: {resultado_sin_comillas}")
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
